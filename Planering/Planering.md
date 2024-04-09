@@ -3,9 +3,16 @@
 Ska göra en livsmedelbutik som ska ha en webbshop. Användaren ska kunna skapa ett konto och logga in. Användaren ska kunna lägga till produkter i en kundvagn och sedan slutföra köpet. 
 
 ## Innehåll
-    - En tabell för användare
+    - En tabell för användare 
+|  Name | Password  |Adress   |
+|-------|:---------:|--------:|
     - En tabell för produkter
+|  Name | Pris  |Adress   |
+|-------|:-----:|--------:|
     - En tabell för order
+|  ordernr | Produkter  |Adress   |
+|----------|:----------:|--------:|
+
     - En hemsida, en inloggningsida, en registreringssida, en produktsida, en kundvagnsida och en orderbekräftelsesida.
     - En sökfunktion
 
