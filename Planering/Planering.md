@@ -4,14 +4,14 @@ Ska göra en livsmedelbutik som ska ha en webbshop. Användaren ska kunna skapa 
 
 ## Innehåll
     - En tabell för användare 
-|  Name | Password  |Adress   |
-|-------|:---------:|--------:|
+|id|  Name | Password  |Adress   |
+|-:|-------|:---------:|--------:|
     - En tabell för produkter
-|  Name | Pris  |Adress   |
-|-------|:-----:|--------:|
+|id|  Name | Pris  |Adress   |
+|-:|-------|:-----:|--------:|
     - En tabell för order
-|  ordernr | Produkter  |Adress   |
-|----------|:----------:|--------:|
+|id|  ordernr | Produkter  |Adress   |
+|-:|----------|:----------:|--------:|
 
     - En hemsida, en inloggningsida, en registreringssida, en produktsida, en kundvagnsida och en orderbekräftelsesida.
     - En sökfunktion
