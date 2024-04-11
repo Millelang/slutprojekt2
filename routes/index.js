@@ -6,9 +6,10 @@ const pool = require('../db.js')
 
 
 router.get('/', (req, res) => {
-    res.render('index.njk'), {
-        username: req.session.username
-    }
+  console.log("index user ", req.session.username)
+    res.render('index.njk', {
+        username: req.session.username,
+    })
 })
 
 router.get('/login', (req, res) => {
