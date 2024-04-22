@@ -5,9 +5,12 @@ const bcrypt = require('bcrypt');
 const pool = require('../db.js')
 
 
-router.get('/', (req, res) => {
+router.get('/', async function (req, res)  {
   console.log("index user ", req.session.username)
+
+  const [products] = await pool.promise().query('SELECT * FROM milton_produkter')
     res.render('index.njk', {
+        produkter: products,
         username: req.session.username,
     })
 })

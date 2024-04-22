@@ -11,3 +11,9 @@ Idag så fixade jag några små problem som jag hade med databasen. Jag skapade 
 
 ## V16 Måndag
 Idag så fixade jag en figma skiss eftersom att jag kände mig vilse, problemet som jag löste idag var att jag kände mig vilse. Jag skapade en skiss för att få en bättre överblick över projektet.
+
+## V16 Tisdag
+Idag så skapade jag startsidan och lade till produkter och en searchbar. Ett problem som jag hade var att jag hade problem med att få produkterna att visas på startsidan, problemet var att jag hade glömt att skicka datan som en array i index.js.
+
+## V17 Måndag
+Skapade basen för en kundvagn och problemet jag löste var att javascript inte gillade att ha flera knappar i en array så jag fixade det genom att ta bort arrayen
