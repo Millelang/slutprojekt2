@@ -1,7 +1,51 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<main>
-  
+<main class="container">
+
+  <form action="/order" method="post" id="form">
+    <button type="submit">Köp</button>
+  </form>
+
+
+  <form action="/order" method="post" id="formett">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="address" placeholder="Address">
+    <button type="submit">Köp</button>
+  </form>
 </main>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const form = document.querySelector('#form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Create a FormData object
+    let body = new FormData();
+
+    // Add data from the cart to the FormData object
+    cart.forEach(item => {
+      console.log(item)
+      body.append(item.name, item.quantity);
+    });
+
+    console.log(...body.entries())
+
+    // Create your POST request
+    fetch('/order', {
+      method: 'post', 
+      body : body,
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  });
+</script>
+
+
 {% endblock %}

@@ -50,20 +50,36 @@
       <div class="button-container">
         <button id="{{produkt.name}}">Köp</button>
       </div>
-      <script>
-         buybutton = document.querySelector('#{{produkt.name}}');
-        buybutton.addEventListener('click', (event) => {
-          event.preventDefault();
-          localStorage.setItem('{{ produkt.name }}', '{{ produkt.price }}');
-          console.log(localStorage);
-        });
-      </script>
-
-
     </div>
   </div>
   </div>
   {% endfor %}
 </main>
+
+<script>
+  let cart = localStorage.getItem('cart') || [];
+
+  document.querySelectorAll('button').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      let item = event.target.id;
+      let existingItem = cart.find(cartItem => cartItem.name === item);
+
+      if (existingItem) {
+        // Item exists, update quantity
+        existingItem.quantity += 1;
+      } else {
+        // Item does not exist, add it
+        let newItem = {
+          name: item,
+          quantity: 1
+        };
+        cart.push(newItem);
+      }
+
+      // Update localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+    });
+  });
+</script>
 
 {% endblock %}
