@@ -74,21 +74,23 @@ router.post('/signup', async function (req, res) {
 
 router.post('/order', async function (req, res) {
   console.log(req.body)
-  res.json("hej"  )
-  // const [products] = localStorage.getItem('key')
-  // const [price] = localStorage.getItem('value')
-  // const user = req.session.id
-  // let pris = 0
-  // for (let i = 0; i < price.length; i++) {
-  //   pris += price[i]
-  // }
+  let cart = req.body
+  res.json("hej")
+  cart.forEach(item => {
+    try {
+      const [order] = pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `antal`, `produkter` ) VALUES( ?, ?, ?)', [req.session.userid, item.quantity, item.name])
+      res.redirect('/')
+    } catch (error) {
+      console.log(error)
+    }
+  })
+  });
   // try {
   //   const [order] = await pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `pris`, `produkter` ) VALUES( ?, ?, ?)', [user, pris, products])
   //   res.redirect('/')
   // } catch (error) {
   //   console.log(error)
   // }
-})
 
 router.get('/cart', (req, res) => {
   res.render('cart.njk')

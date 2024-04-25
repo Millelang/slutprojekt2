@@ -6,9 +6,11 @@ const session = require('express-session')
 
 const indexRouter = require('./routes/index')
 
+
 const port = process.env.PORT || 3000
 
 const app = express()
+app.use(express.json());
 
 nunjucks.configure('views', {
   autoescape: true,

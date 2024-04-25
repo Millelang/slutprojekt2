@@ -10,8 +10,8 @@ Ska göra en livsmedelbutik som ska ha en webbshop. Användaren ska kunna skapa 
 |id|  Name | Pris  |Adress   |
 |-:|-------|:-----:|--------:|
     - En tabell för order
-|id|  ordernr | Produkter  |Adress   |
-|-:|----------|:----------:|--------:|
+|id|  userid | Produkter  |Antal    |
+|-:|---------|:----------:|--------:|
 
     - En hemsida, en inloggningsida, en registreringssida, en produktsida, en kundvagnsida och en orderbekräftelsesida.
     - En sökfunktion

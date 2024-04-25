@@ -17,3 +17,6 @@ Idag så skapade jag startsidan och lade till produkter och en searchbar. Ett pr
 
 ## V17 Måndag
 Skapade basen för en kundvagn och problemet jag löste var att javascript inte gillade att ha flera knappar i en array så jag fixade det genom att ta bort arrayen
+
+## V17 Torsdag och tisdag
+Skapade backend för kundvagnen så att man kan skcika in ordrar till databasen, ett problem som jag satt fast på väldigt länge var att fetch vägrade ta emot/kunna skicka formdata vilket löstes genom att inte skicka varukorgen som fromdata och bara skicka carten som ett json objekt.
