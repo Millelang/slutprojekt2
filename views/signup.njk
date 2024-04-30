@@ -2,9 +2,9 @@
 
 {% block content %}
 
-
+<main class="container">
     <h1>Registrera</h1>
-
+<div class="login">
 <form action="/signup" method="post">
     <label for="username">Välj ditt användarnamn</label>
     <input type="text" id="username" name="username" required>
@@ -15,5 +15,6 @@
     <input type="submit" value="Registrera"> </form>
  
 </form>
-
+</div>
+</main>
 {% endblock %}

@@ -20,3 +20,6 @@ Skapade basen för en kundvagn och problemet jag löste var att javascript inte 
 
 ## V17 Torsdag och tisdag
 Skapade backend för kundvagnen så att man kan skcika in ordrar till databasen, ett problem som jag satt fast på väldigt länge var att fetch vägrade ta emot/kunna skicka formdata vilket löstes genom att inte skicka varukorgen som fromdata och bara skicka carten som ett json objekt.
+
+## 18 Måndag
+Skapade så att man kan se vad som man har lagt i kundvagnen då man ska checka ut, problemet som jag löste idag var att jag hade svårt med att få datan att visas på sidan, problemet var att jag hade glömt att skicka datan som en array.

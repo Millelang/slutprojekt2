@@ -3,28 +3,37 @@
 {% block content %}
 <main class="container">
 
-<button type="button" id="buystuff">Köp grejjor</button>
-
-
+  
+  
   <h1>Varukorg</h1>
-  <div class="cart" id="cartt">
+  <div id="cart"></div>
+  <button type="button" id="buystuff">Köp grejjor</button>
+  
+
 
   </div>
 </main>
 
 <script>
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const items = cart.map(item => {
+    return {
+      name: item.name,
+      quantity: item.quantity
+    }
+  });
+  console.log(items) 
 
+  items.forEach(item => {
+    let meow = document.createElement('p')
+    meow.textContent = item.name + " " + item.quantity + "st"
+    document.body.appendChild(meow)
+    
+  });
   const bjutton = document.querySelector('#buystuff');
   bjutton.addEventListener('click', (event) => {
-    console.log("button vclick")
     event.preventDefault()
-    cart.foreach((item) => {
-      meow = document.createElement('h3')
-      meow.textContent = item.name + "" + item.quantity + "st"
-      meow.append(document.querySelector('#cartt'))
-    })
-
+    
     fetch('/order', {
       method: 'post',
       headers: {

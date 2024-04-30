@@ -2,18 +2,19 @@
 
 {% block content %}
 
-
+<main class="container">
     <h1>Log in</h1>
-
+<div class="login">
 <form action="/login" method="post">
-    <label for="username">username</label>
+    <label for="username">Username</label>
     <input type="text" id="username" name="username" required>
-    <label for="">password</label>
+    <label for="">Password</label>
     <input type="text" id="password" name="password" required>
   
 
     <input type="submit" value="Log in"> </form>
  
 </form>
-
+</div>
+</main>
 {% endblock %}

@@ -93,6 +93,7 @@ router.post('/order', async function (req, res) {
   // }
 
 router.get('/cart', (req, res) => {
+  
   res.render('cart.njk')
 })
 
