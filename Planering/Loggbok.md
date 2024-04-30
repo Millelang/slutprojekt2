@@ -23,3 +23,5 @@ Skapade backend för kundvagnen så att man kan skcika in ordrar till databasen,
 
 ## 18 Måndag
 Skapade så att man kan se vad som man har lagt i kundvagnen då man ska checka ut, problemet som jag löste idag var att jag hade svårt med att få datan att visas på sidan, problemet var att jag hade glömt att skicka datan som en array.
+
+## Fixade hosting och kundvagn v18 tisdag
