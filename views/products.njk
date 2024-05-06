@@ -1,8 +1,41 @@
 {% extends "layout.njk" %}
-
+{% include 'components/nav.njk' %}
 {% block content %}
-<main>
-  
-  
-</main>
+<main class="container">
+    {% for products in products %}
+  <div class="card">
+  <h1>{{products.name}}</h1>
+    <p>{{products.description}}</p>
+    <p>{{products.price}} kr</p>
+    <div class="button-container">
+        <button id="{{produkt.name}}">Köp</button>
+      </div>
+ </div>
+    {%endfor%}
+</main>  
 {% endblock %}
+
+
+<script>
+  let cart = localStorage.getItem('cart') || [];
+
+  document.querySelectorAll('button').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      let item = event.target.id;
+      let existingItem = cart.find(cartItem => cartItem.name === item);
+
+      if (existingItem) {
+        // Item exists, update quantity
+        existingItem.quantity += 1;
+      } else {
+        // Item does not exist, add it
+        let newItem = {
+          name: item,
+          quantity: 1
+        };
+        cart.push(newItem);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+    });
+  });

@@ -25,3 +25,6 @@ Skapade backend för kundvagnen så att man kan skcika in ordrar till databasen,
 Skapade så att man kan se vad som man har lagt i kundvagnen då man ska checka ut, problemet som jag löste idag var att jag hade svårt med att få datan att visas på sidan, problemet var att jag hade glömt att skicka datan som en array.
 
 ## Fixade hosting och kundvagn v18 tisdag
+
+## V19 Måndag
+Fixade search funktionen, en problem som jag stötte på var att jag hade problem med att få search funktionen att fungera, problemet var att jag hade glömt att skicka datan som en array och använda array metoder på den (foreach).

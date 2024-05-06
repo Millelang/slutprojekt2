@@ -97,4 +97,28 @@ router.get('/cart', (req, res) => {
   res.render('cart.njk')
 })
 
+router.get('/products', async function (req, res) {
+
+  
+  let query = req.query.searchQueryInput
+  if (query) {
+    query = query.replace(/[^a-zA-Z0-9]/g, '')
+    try {
+      const [produkt] = await pool.promise().query(`
+      SELECT * FROM milton_produkter WHERE name LIKE "%${query}%" `)
+     res.render('products.njk', { products: produkt })
+     console.log(produkt)
+    }
+    catch (error) {
+      console.log(error)
+      res.sendStatus(500)
+    }
+  } else {
+    res.send('No query provided')
+  }
+});
+
+
+
+
 module.exports = router
