@@ -28,3 +28,6 @@ Skapade så att man kan se vad som man har lagt i kundvagnen då man ska checka 
 
 ## V19 Måndag
 Fixade search funktionen, en problem som jag stötte på var att jag hade problem med att få search funktionen att fungera, problemet var att jag hade glömt att skicka datan som en array och använda array metoder på den (foreach).
+
+## V19 Tisdag
+Fixat utchecknings sidans css och gjort den finare, har även påbörjat att göra order databasen mer organiserad, ett problem som dök upp var att utcheckningsknappen vägrade vara på rätt ställe och alltid hamnade på toppen, jag löste detta genom att skapa en separat div för själv utcheckning infon.

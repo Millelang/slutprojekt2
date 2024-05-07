@@ -78,7 +78,7 @@ router.post('/order', async function (req, res) {
   res.json("hej")
   cart.forEach(item => {
     try {
-      const [order] = pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `antal`, `produkter` ) VALUES( ?, ?, ?)', [req.session.userid, item.quantity, item.name])
+      const [order] = pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `antal`, `produkter`, `pris` ) VALUES( ?, ?, ?, ?)', [req.session.userid, item.quantity, item.name, item.price])
       res.redirect('/')
     } catch (error) {
       console.log(error)
@@ -118,7 +118,10 @@ router.get('/products', async function (req, res) {
   }
 });
 
-
+router.get('/logout', (req, res) => {
+  req.session.destroy()
+  res.redirect('/')
+})
 
 
 module.exports = router

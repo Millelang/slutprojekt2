@@ -2,16 +2,14 @@
 
 {% block content %}
 <main class="container">
-
-  
-  
   <h1>Varukorg</h1>
-  <div id="cart"></div>
-  <button type="button" id="buystuff">Köp grejjor</button>
-  
 
+  <div class="" id="cart">
 
   </div>
+  
+ 
+   <button type="button" class="button" id="buystuff">Köp grejjor</button>
 </main>
 
 <script>
@@ -29,15 +27,14 @@
     div1.setAttribute('class', 'card')
     let meow = document.createElement('p')
     meow.textContent = item.name + " " + item.quantity + "st"
-    document.body.appendChild(div1)
     div1.appendChild(meow)
-    
+    document.querySelector('#cart').appendChild(div1) 
     
   });
   const bjutton = document.querySelector('#buystuff');
   bjutton.addEventListener('click', (event) => {
     event.preventDefault()
-    
+    localStorage.removeItem('cart')
     fetch('/order', {
       method: 'post',
       headers: {

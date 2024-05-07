@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" >
     <a href="/">
         <img src="/svg/home-icon-silhouette-svgrepo-com.svg" alt="">
     </a>
@@ -7,4 +7,9 @@
         <img src="/svg/shopping_cart_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="">
     </a>
     
+    {% if username %}
+    <a href="/logout">
+        <img src="/svg/logout-svgrepo-com.svg" alt="">
+    </a>
+    {% endif %}
 </div>
