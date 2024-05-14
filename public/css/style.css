@@ -8,6 +8,24 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 }
 
+
+.card2 {
+  margin-top: 5rem;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: 3rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 60%;
+  padding-left: 2rem;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0A893D;
+  }
+}
+
 .hero-image {
   /*  background-image: url("/img/fruitveg.jpg"); */
     background-color: #0A893D;

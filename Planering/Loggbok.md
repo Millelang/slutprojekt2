@@ -31,3 +31,6 @@ Fixade search funktionen, en problem som jag stötte på var att jag hade proble
 
 ## V19 Tisdag
 Fixat utchecknings sidans css och gjort den finare, har även påbörjat att göra order databasen mer organiserad, ett problem som dök upp var att utcheckningsknappen vägrade vara på rätt ställe och alltid hamnade på toppen, jag löste detta genom att skapa en separat div för själv utcheckning infon.
+
+## V20 Måndag
+Fixade så att utcheckningsknappen omdiregerar till order konfirmation, problemet var att jag var tvungen att göra en separat listener för att göra det.

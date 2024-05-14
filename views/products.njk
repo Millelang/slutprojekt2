@@ -8,7 +8,7 @@
     <p>{{products.description}}</p>
     <p>{{products.price}} kr</p>
     <div class="button-container">
-        <button id="{{produkt.name}}" class="button">Köp</button>
+        <button id="{{produkt.name}}" class="button1">Köp</button>
       </div>
  </div>
     {%endfor%}
@@ -19,7 +19,7 @@
 <script>
   let cart = localStorage.getItem('cart') || [];
 
-  document.querySelectorAll('button').forEach((button) => {
+  document.querySelectorAll('button1').forEach((button) => {
     button.addEventListener('click', (event) => {
       let item = event.target.id;
       let existingItem = cart.find(cartItem => cartItem.name === item);

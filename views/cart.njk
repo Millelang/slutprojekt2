@@ -8,7 +8,7 @@
 
   </div>
   
- 
+    
    <button type="button" class="button" id="buystuff">Köp grejjor</button>
 </main>
 
@@ -46,8 +46,12 @@
       .then(data => console.log(data))
       .catch((error) => {
         console.error('Error:', error);
+      
       });
   });
+  document.getElementById('buystuff').addEventListener('click', function() {
+  window.location.href = '/confirmation';
+});
 </script>
 
 

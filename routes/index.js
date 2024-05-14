@@ -79,7 +79,7 @@ router.post('/order', async function (req, res) {
   cart.forEach(item => {
     try {
       const [order] = pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `antal`, `produkter`, `pris` ) VALUES( ?, ?, ?, ?)', [req.session.userid, item.quantity, item.name, item.price])
-      res.redirect('/')
+      res.redirect('/confirmation')
     } catch (error) {
       console.log(error)
     }
@@ -123,5 +123,8 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
+router.get('/confirmation', (req, res) => {
+  res.render('confirmation.njk')
+})
 
 module.exports = router
