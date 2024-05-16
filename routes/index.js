@@ -35,14 +35,20 @@ router.post('/login', async function (req, res) {
   const passwordenter = req.body.password
 
   bcrypt.compare(passwordenter, user[0].password, function (err, result) {
-    req.session.username = username
+   
     console.log(req.session.username)
     if (result) {
+      req.session.username = username
       req.session.login = true
       res.redirect('/')
       console.log(req.session.login)
     } else {
-      res.json({ message: 'Fel lösenord' })
+      let fel = true
+      res.render('login.njk', {
+        fel : fel
+      })
+      console.log(fel)
+      
     }
   });
 })
@@ -84,30 +90,30 @@ router.post('/order', async function (req, res) {
       console.log(error)
     }
   })
-  });
-  // try {
-  //   const [order] = await pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `pris`, `produkter` ) VALUES( ?, ?, ?)', [user, pris, products])
-  //   res.redirect('/')
-  // } catch (error) {
-  //   console.log(error)
-  // }
+});
+// try {
+//   const [order] = await pool.promise().query('INSERT INTO `milton_orders` ( `user_id`, `pris`, `produkter` ) VALUES( ?, ?, ?)', [user, pris, products])
+//   res.redirect('/')
+// } catch (error) {
+//   console.log(error)
+// }
 
 router.get('/cart', (req, res) => {
-  
+
   res.render('cart.njk')
 })
 
 router.get('/products', async function (req, res) {
 
-  
+
   let query = req.query.searchQueryInput
   if (query) {
     query = query.replace(/[^a-zA-Z0-9]/g, '')
     try {
       const [produkt] = await pool.promise().query(`
       SELECT * FROM milton_produkter WHERE name LIKE "%${query}%" `)
-     res.render('products.njk', { products: produkt })
-     console.log(produkt)
+      res.render('products.njk', { products: produkt })
+      console.log(produkt)
     }
     catch (error) {
       console.log(error)

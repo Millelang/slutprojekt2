@@ -3,6 +3,11 @@
 {% block content %}
 
 <main class="container">
+    {% if fel %}
+    <div class="error">
+        <p>Fel användarnamn eller lösenord</p>
+    </div>
+    {% endif %}
     <h1>Log in</h1>
 <div class="login">
 <form action="/login" method="post">
