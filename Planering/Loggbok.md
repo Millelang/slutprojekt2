@@ -37,3 +37,7 @@ Fixade så att utcheckningsknappen omdiregerar till order konfirmation, probleme
 
 ## V20 Torsdag
 Idag så fixade jag lite generella buggar och skapade ett error medelande då man skriver in fel lösenord då man loggar, ett problem som jag stötte på idag var att om man slog fel lösenord och loggade in så försvann alla logga in knappar eftersom att username redan ändå blev skickat, löste detta genom att inte skicka username från login formet föräns det inloggningen gått igenom.
+
+
+## V21 Måndag-Torsdag
+Fixat så att price kommer in i ordern och försökt att fixa hosting igen då jag råka sabotera för mig själv, ett problem som jag stött på väldigt länge är att få ett sätt att få in price i cart, löste detta genom att använda data attributet för datan vilket gjorde det möjligt att välja price och lägga in i cart local storage

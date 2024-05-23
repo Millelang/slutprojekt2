@@ -17,7 +17,8 @@
   const items = cart.map(item => {
     return {
       name: item.name,
-      quantity: item.quantity
+      quantity: item.quantity,
+      price : item.price
     }
   });
   console.log(items) 
@@ -26,7 +27,7 @@
     let div1 = document.createElement('div')
     div1.setAttribute('class', 'card')
     let meow = document.createElement('p')
-    meow.textContent = item.name + " " + item.quantity + "st"
+    meow.textContent = item.name + " " + item.quantity + "st" + " " + item.price + " kr"
     div1.appendChild(meow)
     document.querySelector('#cart').appendChild(div1) 
     

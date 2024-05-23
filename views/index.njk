@@ -50,7 +50,7 @@
 
       </div>
       <div class="button-container">
-        <button id="{{produkt.name}}" class="buy">Köp</button>
+        <button id="{{produkt.name}}" data-price="{{produkt.price}}" class="buy">Köp</button>
       </div>
     </div>
   </div>
@@ -63,17 +63,21 @@
 
   document.querySelectorAll('button').forEach((button) => {
     button.addEventListener('click', (event) => {
+      let element = document.getElementById(event.target.id);
+      let price = parseInt(element.getAttribute('data-price'))
       let item = event.target.id;
       let existingItem = cart.find(cartItem => cartItem.name === item);
 
       if (existingItem) {
         // Item exists, update quantity
         existingItem.quantity += 1;
+        existingItem.price += price;
       } else {
         // Item does not exist, add it
         let newItem = {
           name: item,
-          quantity: 1
+          quantity: 1,
+          price: price
         };
         cart.push(newItem);
       }

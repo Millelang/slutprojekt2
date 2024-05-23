@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const { body, matchedData, validationResult } = require('express-validator')
+
+const { body, matchedData, validationResult, validator } = require('express-validator')
 const bcrypt = require('bcrypt');
 const pool = require('../db.js')
 
@@ -35,7 +36,7 @@ router.post('/login', async function (req, res) {
   const passwordenter = req.body.password
 
   bcrypt.compare(passwordenter, user[0].password, function (err, result) {
-   
+
     console.log(req.session.username)
     if (result) {
       req.session.username = username
@@ -45,10 +46,10 @@ router.post('/login', async function (req, res) {
     } else {
       let fel = true
       res.render('login.njk', {
-        fel : fel
+        fel: fel
       })
       console.log(fel)
-      
+
     }
   });
 })
@@ -60,23 +61,36 @@ router.get('/signup', (req, res) => {
 
 })
 
-router.post('/signup', async function (req, res) {
-  const username = req.body.username
-  const password = req.body.password
+router.post('/signup',
+  [body('username').trim().isLength({ min: 3 }).withMessage('Username must be at least 3 characters long'),
+  body('password').trim().isLength({ min: 5 }).withMessage('Password must be at least 5 characters long')],
 
-  bcrypt.hash(password, 10, async function (err, hash) {
-    try {
-      const [user] = await pool.promise().query('INSERT INTO `milton_users` ( `name`, `password`) VALUES( ?, ?)', [username, hash])
-      res.redirect('/login')
-    } catch (error) {
-      console.log(error)
-      res.status(402)
+  async function (req, res) {
+    
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
+    const username = req.body.username
+    const password = req.body.password
+
+
+      const [user] = await pool.promise().query(
+        'SELECT id, password FROM milton_users WHERE name = ?', [username]
+      )
+
+      bcrypt.hash(password, 10, async function (err, hash) {
+        try {
+          const [user] = await pool.promise().query('INSERT INTO `milton_users` ( `name`, `password`) VALUES( ?, ?)', [username, hash])
+          res.redirect('/login')
+        } catch (error) {
+          console.log(error)
+          res.status(402)
+        }
+      })
+  
+
   })
-
-
-
-})
 
 router.post('/order', async function (req, res) {
   console.log(req.body)
