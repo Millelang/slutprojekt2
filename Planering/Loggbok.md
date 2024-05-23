@@ -40,4 +40,4 @@ Idag så fixade jag lite generella buggar och skapade ett error medelande då ma
 
 
 ## V21 Måndag-Torsdag
-Fixat så att price kommer in i ordern och försökt att fixa hosting igen då jag råka sabotera för mig själv, ett problem som jag stött på väldigt länge är att få ett sätt att få in price i cart, löste detta genom att använda data attributet för datan vilket gjorde det möjligt att välja price och lägga in i cart local storage
+Fixat så att price kommer in i ordern och försökt att fixa hosting igen då jag råka sabotera för mig själv, ett problem som jag stött på väldigt länge är att få ett sätt att få in price i cart, löste detta genom att använda data attributet för datan vilket gjorde det möjligt att välja price och lägga in i cart local storage. Även fixat validator
