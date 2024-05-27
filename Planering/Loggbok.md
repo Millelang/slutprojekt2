@@ -41,3 +41,11 @@ Idag så fixade jag lite generella buggar och skapade ett error medelande då ma
 
 ## V21 Måndag-Torsdag
 Fixat så att price kommer in i ordern och försökt att fixa hosting igen då jag råka sabotera för mig själv, ett problem som jag stött på väldigt länge är att få ett sätt att få in price i cart, löste detta genom att använda data attributet för datan vilket gjorde det möjligt att välja price och lägga in i cart local storage. Även fixat validator
+
+
+
+## v22 Måndag
+Wave fix - Fixat 2 errors där alt taggar saknades på svg bilderna i navbaren
+Fixat 1 error där sök knappen inte hade någon text för skärmläsare
+Fixat 3 till errrors där label var tom i forms, för sök formet inloggning och signup
+Fixat 1 error eftersom att sidan saknade title

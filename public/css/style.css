@@ -29,7 +29,7 @@ html {
 }
 
 .hero-image {
-  /*  background-image: url("/img/fruitveg.jpg"); */
+  background-image: url("/img/Food_in_supermarket.jpg"); 
   background-color: #0A893D;
   height: 50%;
 
@@ -249,4 +249,15 @@ input[type=submit] {
 
 .error > p {
   color: white;
+}
+.skip-link {
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
 }
