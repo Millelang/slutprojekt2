@@ -49,3 +49,6 @@ Wave fix - Fixat 2 errors där alt taggar saknades på svg bilderna i navbaren
 Fixat 1 error där sök knappen inte hade någon text för skärmläsare
 Fixat 3 till errrors där label var tom i forms, för sök formet inloggning och signup
 Fixat 1 error eftersom att sidan saknade title
+
+Validator.nu
+Fixade errors i searchbarkoden där det var flera ostängda taggar som behvödes flyttas om
