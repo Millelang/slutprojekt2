@@ -51,4 +51,6 @@ Fixat 3 till errrors där label var tom i forms, för sök formet inloggning och
 Fixat 1 error eftersom att sidan saknade title
 
 Validator.nu
-Fixade errors i searchbarkoden där det var flera ostängda taggar som behvödes flyttas om
+Fixade errors i searchbarkoden där det var flera ostängda taggar som behvödes flyttas om eller tas bort
+I search funktionen så var det ett struktuellt fel där jag hade en div som inte behövdes
+Fixadae åtta ostängda taggar i koden
